@@ -114,15 +114,18 @@
 		navbar.after('<div id="more-div" style="height: ' + navbar.outerHeight(true) + 'px" class="hidden"></div>');
 
 		//Get the bounding positions
-		var rect = navbar.getBoundingClientRect();
-		//Assign variables for adjusted scrolling
-		var afternavbar = rect.bottom;
-		var abovenavbar = rect.top;
-		// var afternavbar = $('#more-div');
-		// var abovenavbar = $('#above-navbar');
+		//var rect = navbar.getBoundingClientRect();
+		var rect = document.getElementById("navbar").getBoundingClientRect();
+		
+		var afternavbar = rect.bottom;	//$('#more-div');
+		var abovenavbar = rect.top - 37;	//$('#above-navbar');
+
+		console.log("After is " + afternavbar);
+		console.log("Before is " + abovenavbar);
+
 		$(window).on('scroll', function()
 		{
-			if ($(window).scrollTop() > abovenavbar.height())
+			if ($(window).scrollTop() > abovenavbar)
 			{
 				navbar.addClass('navbar-fixed-top');
 				afternavbar.removeClass('hidden');
@@ -136,6 +139,12 @@
 	});
 </script>
 
+<style type="text/css">
+	.navbar-fixed-top {
+		position: fixed absolute;
+		margin-bottom: 40px; 
+	}
+</style>
 
 </head>
 
