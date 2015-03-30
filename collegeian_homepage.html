@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!-- 	<link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="generator" content="Gryphon 3.1 (luce) (Foundry 6.1-20120328 (mason))" />
 
@@ -26,11 +26,11 @@
 
 
 	<link rel="icon" type="image/png" href="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_favicon.png" />
-	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" media="screen, projection, print" href="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/css/master.css" />
-	<link rel="stylesheet" href="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/flipster/flipster.min.css">
-	<link rel="stylesheet" href="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/fancybox/jquery.fancybox.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/css/add2home.css">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Oswald:300,400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet" type="text/css" media="screen, projection, print" href="css/master.css" />
+	<link rel="stylesheet" href="css/flipster.min.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/add2home.css">
 	<script type="text/javascript">
 		var addToHomeConfig = {
 			returningVisitor: true,
@@ -117,34 +117,39 @@
 		//var rect = navbar.getBoundingClientRect();
 		var rect = document.getElementById("navbar").getBoundingClientRect();
 		
-		var afternavbar = rect.bottom;	//$('#more-div');
-		var abovenavbar = rect.top - 37;	//$('#above-navbar');
+		var afternavbar = rect.bottom+ 300;	//$('#more-div');
+		var abovenavbar = rect.top + 300;	//$('#above-navbar');
 
-		console.log("After is " + afternavbar);
-		console.log("Before is " + abovenavbar);
+		// console.log("After is " + afternavbar);
+		// console.log("Before is " + abovenavbar);
 
 		$(window).on('scroll', function()
 		{
 			if ($(window).scrollTop() > abovenavbar)
 			{
 				navbar.addClass('navbar-fixed-top');
-				afternavbar.removeClass('hidden');
+				navbar.show();
+				//afternavbar.removeClass('hidden');
 			}
 			else
 			{
 				navbar.removeClass('navbar-fixed-top');
-				afternavbar.addClass('hidden');
+				navbar.hide();
+				//afternavbar.addClass('hidden');
 			}
 		});
 	});
 </script>
 
-<style type="text/css">
+<!--<style type="text/css">
 	.navbar-fixed-top {
-		position: fixed absolute;
-		margin-bottom: 40px; 
+		position: fixed center;
+		margin-bottom: 37px;
+		width: 100%; 
+		text-align: center;
 	}
-</style>
+</style>-->
+
 
 </head>
 
@@ -187,35 +192,37 @@
 
 				</div>
 			</div>
-			<div class="row-fluid">
-				<div class="span8 offset2 text-center masthead hidden-tablet hidden-phone">
-					<a href="/">
-						<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
-					</a>
-				</div>
-
-				<div class="span12 text-center masthead hidden-desktop">
-					<a href="/">
-						<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
-					</a>
-				</div>
-
-				<div class="span2 over-masthead hidden-tablet hidden-phone">
-					<div id="weather" class="hidden-phone">
-						<span>Today's Forecast</span><br />
-						<span>Rain</span>
-						<span>50&deg;F</span>
+			<section id="banner">
+				<div class="row-fluid">
+					<div class="span8 offset2 text-center masthead hidden-tablet hidden-phone">
+						<a href="/">
+							<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
+						</a>
 					</div>
 
-					<span id="date">March 25, 2015</span>
+					<div class="span12 text-center masthead hidden-desktop">
+						<a href="/">
+							<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
+						</a>
+					</div>
 
-					<form id="search" method="get" action="/search/">
-						<input id="searchField" type="text" name="q" placeholder="Search" class="span3" />
-						<input type="submit" value="" id="submit" />
-					</form>
+					<div class="span2 over-masthead hidden-tablet hidden-phone">
+						<div id="weather" class="hidden-phone">
+							<span>Today's Forecast</span><br />
+							<span>Rain</span>
+							<span>50&deg;F</span>
+						</div>
+
+						<span id="date">March 25, 2015</span>
+					</div>
 				</div>
-			</div>
-			<div class="navbar" id="navbar">
+			</section>
+
+			<!--	Redirects the page to start where the banner is-->
+			<script type="text/javascript"> 
+				window.location = "#banner"
+			</script>
+			<div class="navbar" style="width: 100%;">
 				<div class="navbar-inner">
 					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".main-menu">
@@ -225,16 +232,23 @@
 
 						<ul class="nav">
 
+							<li style="width: 100px; padding-top: +10px;"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png"></li>
+
 							<li><a href="/"><span>Home</span></a></li>
 							<li><a href="/section/news"><span>News</span></a></li>
 							<li><a href="/section/features"><span>Feature</span></a></li>
 							<li><a href="/section/sports"><span>Sports</span></a></li>
 							<li><a href="/section/opinion"><span>Opinion</span></a></li>
 							<li><a href="/multimedia/"><span>Multimedia</span></a></li>
-							<li><a href="/blog/"><span>Blogs</span></a></li>
-
+							
 							<li><a href="/page/contact"><span>Contact Us</span></a></li>
 							<li><a href="http://eepurl.com/5RB8f"><span>Email Sign-up</span></a></li>
+							<!-- <li>
+								<form id="search" method="get" action="/search/">
+									<input id="searchField" type="text" name="q" placeholder="Search" class="span3" style="width: 100px; padding-top: +10px;"/>
+									<input type="submit" value="" id="submit" />
+								</form>
+							</li> -->
 
 						</ul> <!-- end of nav -->
 						<form class= "hidden-desktop" id="search" method="get" action="/search/">
@@ -245,6 +259,43 @@
 				</div> <!-- end of nav bar inner-->
 			</div> <!-- end of nav bar -->
 
+
+			<div class="navbar" style="width: 100%;" id="navbar" hidden>
+				<div class="navbar-inner">
+					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".main-menu">
+						<span class="icon-chevron-down"></span>
+					</a>
+					<div class="nav-collapse collapse main-menu">
+
+						<ul class="nav">
+
+							<li style="width: 100px; padding-top: +10px;"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png"></li>
+
+							<li><a href="/"><span>Home</span></a></li>
+							<li><a href="/section/news"><span>News</span></a></li>
+							<li><a href="/section/features"><span>Feature</span></a></li>
+							<li><a href="/section/sports"><span>Sports</span></a></li>
+							<li><a href="/section/opinion"><span>Opinion</span></a></li>
+							<li><a href="/multimedia/"><span>Multimedia</span></a></li>
+							
+							<li><a href="/page/contact"><span>Contact Us</span></a></li>
+							<li><a href="http://eepurl.com/5RB8f"><span>Email Sign-up</span></a></li>
+							<!-- <li>
+								<form id="search" method="get" action="/search/">
+									<input id="searchField" type="text" name="q" placeholder="Search" class="span3" style="width: 100px; padding-top: +10px;"/>
+									<input type="submit" value="" id="submit" />
+								</form>
+							</li> -->
+
+						</ul> <!-- end of nav -->
+						<form class= "hidden-desktop" id="search" method="get" action="/search/">
+							<input id="searchField" type="text" name="q" placeholder="Search" class="span3" />
+							<input type="submit" value="" id="submit" />
+						</form>
+					</div><!-- end of collapse collapse -->
+				</div> <!-- end of nav bar inner-->
+			</div> <!-- end of nav bar -->
 			<div class="row-fluid">
 
 			</div>
@@ -601,7 +652,7 @@
 
 					</div>
 				</div>
-				
+
 
 
 
