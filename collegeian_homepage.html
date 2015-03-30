@@ -115,17 +115,17 @@
 
 		//Get the bounding positions
 		//var rect = navbar.getBoundingClientRect();
-		var rect = document.getElementById("navbar").getBoundingClientRect();
+		//var rect = document.getElementById("navbar").getBoundingClientRect();
 		
-		var afternavbar = rect.bottom+ 300;	//$('#more-div');
-		var abovenavbar = rect.top + 300;	//$('#above-navbar');
+		// var afternavbar = rect.bottom;//+ 300;	//$('#more-div');
+		// var abovenavbar = rect.top;// + 300;	//$('#above-navbar');
 
 		// console.log("After is " + afternavbar);
 		// console.log("Before is " + abovenavbar);
 
 		$(window).on('scroll', function()
 		{
-			if ($(window).scrollTop() > abovenavbar)
+			if ($(window).scrollTop() > $('.navbar').offset().top)
 			{
 				navbar.addClass('navbar-fixed-top');
 				navbar.show();
@@ -141,6 +141,11 @@
 	});
 </script>
 
+<!--	Redirects the page to start where the navbar  is-->
+<script type="text/javascript"> 
+	window.location = "#banner";
+</script>
+
 <!--<style type="text/css">
 	.navbar-fixed-top {
 		position: fixed center;
@@ -149,7 +154,6 @@
 		text-align: center;
 	}
 </style>-->
-
 
 </head>
 
@@ -218,13 +222,9 @@
 				</div>
 			</section>
 
-			<!--	Redirects the page to start where the banner is-->
-			<script type="text/javascript"> 
-				window.location = "#banner"
-			</script>
-			<div class="navbar" style="width: 100%;">
-				<div class="navbar-inner">
-					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
+			<div class="navbar" align="center" style="width: 100%">
+				<div class="navbar-inner" style="display:inline-block">
+					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu"></a>
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".main-menu">
 						<span class="icon-chevron-down"></span>
 					</a>
@@ -232,7 +232,11 @@
 
 						<ul class="nav">
 
-							<li style="width: 100px; padding-top: +10px;"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png"></li>
+							<li style="width: 90px;" >
+								<a href="/">
+									<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
+								</a>
+							</li>
 
 							<li><a href="/"><span>Home</span></a></li>
 							<li><a href="/section/news"><span>News</span></a></li>
@@ -240,15 +244,15 @@
 							<li><a href="/section/sports"><span>Sports</span></a></li>
 							<li><a href="/section/opinion"><span>Opinion</span></a></li>
 							<li><a href="/multimedia/"><span>Multimedia</span></a></li>
-							
+
 							<li><a href="/page/contact"><span>Contact Us</span></a></li>
-							<li><a href="http://eepurl.com/5RB8f"><span>Email Sign-up</span></a></li>
-							<!-- <li>
-								<form id="search" method="get" action="/search/">
-									<input id="searchField" type="text" name="q" placeholder="Search" class="span3" style="width: 100px; padding-top: +10px;"/>
+							<li><a href="http://eepurl.com/5RB8f"><span>Sign-up</span></a></li>
+							<li>
+								<form id="search" method="get" action="/search/" style="padding-top: +5px; padding-left: +10px";>
+									<input id="searchField" type="text" name="q" placeholder="Search" style="width: 100px; "/>
 									<input type="submit" value="" id="submit" />
 								</form>
-							</li> -->
+							</li> 
 
 						</ul> <!-- end of nav -->
 						<form class= "hidden-desktop" id="search" method="get" action="/search/">
@@ -260,9 +264,8 @@
 			</div> <!-- end of nav bar -->
 
 
-			<div class="navbar" style="width: 100%;" id="navbar" hidden>
-				<div class="navbar-inner">
-					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
+			<div class="navbar" align="center" style="width: 100%" id="navbar" hidden>
+				<div class="navbar-inner" style="display:inline-block; ">
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".main-menu">
 						<span class="icon-chevron-down"></span>
 					</a>
@@ -270,7 +273,11 @@
 
 						<ul class="nav">
 
-							<li style="width: 100px; padding-top: +10px;"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png"></li>
+							<li style="width: 90px;">
+								<a href="/">
+									<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
+								</a>
+							</li>
 
 							<li><a href="/"><span>Home</span></a></li>
 							<li><a href="/section/news"><span>News</span></a></li>
@@ -280,22 +287,20 @@
 							<li><a href="/multimedia/"><span>Multimedia</span></a></li>
 							
 							<li><a href="/page/contact"><span>Contact Us</span></a></li>
-							<li><a href="http://eepurl.com/5RB8f"><span>Email Sign-up</span></a></li>
-							<!-- <li>
-								<form id="search" method="get" action="/search/">
-									<input id="searchField" type="text" name="q" placeholder="Search" class="span3" style="width: 100px; padding-top: +10px;"/>
+							<li><a href="http://eepurl.com/5RB8f"><span>Sign-up</span></a></li>
+							
+							<li>
+								<form id="search" method="get" action="/search/" style="padding-top: +5px; padding-left: +10px";>
+									<input id="searchField" type="text" name="q" placeholder="Search" style="width: 100px; "/>
 									<input type="submit" value="" id="submit" />
 								</form>
-							</li> -->
+							</li> 
 
 						</ul> <!-- end of nav -->
-						<form class= "hidden-desktop" id="search" method="get" action="/search/">
-							<input id="searchField" type="text" name="q" placeholder="Search" class="span3" />
-							<input type="submit" value="" id="submit" />
-						</form>
 					</div><!-- end of collapse collapse -->
 				</div> <!-- end of nav bar inner-->
 			</div> <!-- end of nav bar -->
+			
 			<div class="row-fluid">
 
 			</div>
@@ -967,7 +972,7 @@
 
 
 
-					<div class="poll-box">
+<!-- 					<div class="poll-box">
 						<h3>What are you doing for Spring Break?</h3>
 
 						<form method="post" action="http://www.thecollegianur.com/poll/vote/8">
@@ -988,7 +993,7 @@
 							<input class="btn btn-primary" type="submit" value="Vote" /> &nbsp; <a href="http://www.thecollegianur.com/poll/8">or View Results</a>			
 						</form>
 
-					</div>
+					</div> -->
 
 					<!-- gryphon/ads/rectangle.tpl -->
 
@@ -1008,7 +1013,7 @@
 
 
 
-					<h3>Events Calendar</h3>
+<!-- 					<h3>Events Calendar</h3>
 					<table id="side-calendar" cellspacing="0">
 						<thead>
 							<tr class="month">
@@ -1204,7 +1209,7 @@
 
 
 						</tbody>
-					</table>
+					</table> -->
 
 
 				</div>

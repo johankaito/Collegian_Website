@@ -7,16 +7,16 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ nav,
+ section {
   display: block;
 }
 audio,
@@ -4163,8 +4163,8 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-inner {
   min-height: 50px; /*40px*/
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 1px;
+  padding-right: 1px;
   background-color: #fafafa;
   background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
@@ -5657,7 +5657,7 @@ a.badge:hover {
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
-.clearfix {
+ .clearfix {
   *zoom: 1;
 }
 .clearfix:before,
@@ -7324,8 +7324,8 @@ a.badge:hover {
     display: block;
   }
   .navbar-static .navbar-inner {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 @media (min-width: 980px) {
@@ -7531,7 +7531,8 @@ header img.logo {
   border: none;
 }
 .navbar .navbar-inner .nav {
-  margin-left: 20px;
+  /*margin-left: 20px;*/
+
 }
 .navbar .navbar-inner .nav li {
   margin-right: -2px;
