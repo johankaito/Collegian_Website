@@ -1,5 +1,11 @@
 # Collegian_Website
 
+####Changes made
+- Froze navigation bar on scroll.
+- Changed font 
+- Added logo to Navbar
+- Added search tab to navbar
+
 ####Here is what we still have left:
 - Make email subscriptions the first thing that pops up
 - Moving the buttons about twitter, facebook, etc to the top. On that
