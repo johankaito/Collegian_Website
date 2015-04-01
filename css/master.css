@@ -143,7 +143,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -7697,8 +7697,10 @@ footer p {
   margin: 0px 0px 20px 0px;
 }
 .social li {
-  display: inline;
-  margin-right: 10px;
+  display: inline !important;
+  /*margin-right: 5px;*/
+  float:left !important;
+  margin-left: 2px !important;
 }
 .social li img {
   width: 30px;
@@ -7797,7 +7799,7 @@ footer p {
   float: left;
   margin: 5px 5px 5px 0px;
   width: 100px;
-  max-height: 100px;
+  max-height: 200px;
   overflow: hidden;
 }
 .home .span6 .secondaryStory figure img {

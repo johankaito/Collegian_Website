@@ -158,20 +158,34 @@
 	});
 </script>
 
-<!--	Redirects the page to start where the navbar  is-->
-<script type="text/javascript"> 
-	window.location = "#banner";
-</script>
+<!--	Redirects the page to start where the navbar  is
+	and change the font as well as the font size-->
+	<script type="text/javascript"> 
+		window.location = "#banner";
+		$(document).ready(function()
+		{
+			$('*').each(function(){
+				var k =  parseInt($(this).css('font-size')); 
+       			var redSize = ((k*85)/100) ; //here, give the percentage wrt em
+       			$(this).css('font-size',redSize);  
+       			//Change the font family
+      			//$(this).css('font-family', 'Comic Sans, Comic Sans MS, cursive');
+      			$(this).css('font-family', 'Cabin, sans-serif');  
+      			//$(this).css('font-family','Josefin Sans, sans-serif');
+      			//$(this).css('font-family','Prociono, serif');
 
-<!--<style type="text/css">
-	.navbar-fixed-top {
-		position: fixed center;
-		margin-bottom: 37px;
-		width: 100%; 
-		text-align: center;
+      		});
+		});
+	</script>
+<!-- 
+<style type="text/css">
+	body.newfont {
+		font-size: 0.7em;
+		font-family: "Comic Sans MS", cursive, sans-serif;
 	}
-</style>-->
+</style>
 
+-->
 </head>
 
 <body class="home">
@@ -240,16 +254,16 @@
 			</section>
 
 			<div class="navbar" align="" style="width: 100%" id="fixed-navbar">
-				<div class="navbar-inner" style="display:inline-block">
+				<div class="navbar-inner" style="width: 100%; display:inline-block">
 					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
 					<a class="btn btn-navbar" align = "right" data-toggle="collapse" data-target=".main-menu">
 						<span class="icon-chevron-down"></span>
 					</a>
 					<div class="nav-collapse collapse main-menu">
 
-						<ul class="nav">
+						<ul class="nav" style="width: 100%">
 
-							<li style="width: 90px;" >
+							<li style="width: 100px;" >
 								<a href="/">
 									<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
 								</a>
@@ -269,9 +283,16 @@
 									<input id="searchField" type="text" name="q" placeholder="Search" style="width: 100px; "/>
 									<input type="submit" value="" id="submit" />
 								</form>
-							</li> 
-
-						</ul> <!-- end of nav -->
+							</li>
+							<ul class="social" style="margin: 6px 0 0 5px !important;">
+								<li><a href="http://www.facebook.com/urcollegian" target="_blank"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/facebook.png" alt="Facebook"></a></li>
+								<li><a href="http://twitter.com/URCollegian" target="_blank"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/twitter.png" alt="Twitter"></a></li>
+								<li><a href="https://www.youtube.com/user/URCollegian" target="_blank"><img style="width: 40px;" style="width: 25px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/youtube.png" alt="Youtube"></a></li>
+								<li><a href="#"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/rss.png" alt="RSS"></a></li>
+								<li><a href="#"><img style="width: 40px; margin: left" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/mail.png" alt="Emailp"></a></li>
+ 							</ul>
+						</ul>
+						<!-- end of nav -->
 						<!-- <form class= "hidden-desktop" id="search" method="get" action="/search/">
 							<input id="searchField" type="text" name="q" placeholder="Search" class="span3" />
 							<input type="submit" value="" id="submit" />
@@ -282,16 +303,16 @@
 
 
 			<div class="navbar" align="center" style="width: 100%" id="moving-navbar" hidden>
-				<div class="navbar-inner" style="display:inline-block; ">
+				<div class="navbar-inner" style="width: 100%; padding-left:40px; display:inline-block; ">
 					<a class="brand hidden-desktop" href="#" data-toggle="collapse" data-target=".main-menu">Navigation</a>
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".main-menu">
 						<span class="icon-chevron-down"></span>
 					</a>
 					<div class="nav-collapse collapse main-menu">
 
-						<ul class="nav">
+						<ul class="nav" style="width: 100%">
 
-							<li style="width: 90px;">
+							<li style="width: 100px;">
 								<a href="/">
 									<img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_final.png">
 								</a>
@@ -313,6 +334,14 @@
 									<input type="submit" value="" id="submit" />
 								</form>
 							</li> 
+
+							<ul class="social" style="margin: 6px 0 0 5px !important;">
+								<li><a href="http://www.facebook.com/urcollegian" target="_blank"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/facebook.png" alt="Facebook"></a></li>
+								<li><a href="http://twitter.com/URCollegian" target="_blank"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/twitter.png" alt="Twitter"></a></li>
+								<li><a href="https://www.youtube.com/user/URCollegian" target="_blank"><img style="width: 40px;" style="width: 25px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/youtube.png" alt="Youtube"></a></li>
+								<li><a href="#"><img style="width: 40px;" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/rss.png" alt="RSS"></a></li>
+								<li><a href="#"><img style="width: 40px; margin: left" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/mail.png" alt="Emailp"></a></li>
+ 							</ul>
 
 						</ul> <!-- end of nav -->
 					</div><!-- end of collapse collapse -->
@@ -428,32 +457,7 @@
 					})
 				</script>
 
-				<div class="row-fluid hidden-phone">
-					<div class="span6">
-						<!-- gryphon/ads/3X1-rectangle-left.tpl -->
 
-						<div class="ad 3X1-rectangle-left hidden-phone">
-							<!-- urc_banner_left_300x100 -->
-							<div id='div-gpt-ad-1409660223734-0' style='width:300px; height:100px;'>
-								<script type='text/javascript'>
-									googletag.cmd.push(function() { googletag.display('div-gpt-ad-1409660223734-0'); });
-								</script>
-							</div>
-						</div>
-					</div>
-					<div class="span6">
-						<!-- gryphon/ads/3X1-rectangle-right.tpl -->
-
-						<div class="ad 3X1 hidden-phone">
-							<!-- urc_banner_right_300x100 -->
-							<div id='div-gpt-ad-1409660223734-1' style='width:300px; height:100px;'>
-								<script type='text/javascript'>
-									googletag.cmd.push(function() { googletag.display('div-gpt-ad-1409660223734-1'); });
-								</script>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="row-fluid">
 
 
@@ -463,6 +467,11 @@
 
 
 						<article class="secondaryStory">
+
+							<figure style="width: 300px; height: 200px;">
+								<a href="http://www.thecollegianur.com/article/2015/03/survey-results-release"><img style="width: 300px; height: 200px;" src="http://media.urc.s3.amazonaws.com/5109_surveyresultsreportinggraphict.jpg" alt="Preliminary Release: 2015 Campus Attitudes on Sexual Assault"></a>
+							</figure>
+
 							<h5><a href="http://www.thecollegianur.com/article/2015/03/survey-results-release">Preliminary Release: 2015 Campus Attitudes on Sexual Assault</a></h5>
 							<aside>
 
@@ -474,15 +483,14 @@
 
 							</aside>
 
-							<figure>
-								<a href="http://www.thecollegianur.com/article/2015/03/survey-results-release"><img src="http://media.urc.s3.amazonaws.com/5109_surveyresultsreportinggraphict.jpg" alt="Preliminary Release: 2015 Campus Attitudes on Sexual Assault"></a>
-							</figure>
+
+							
 
 							<p>Over 1,000 Richmond undergraduate students responded to The Collegian's Spring 2015 Campus Attitudes on Sexual Assault survey.&nbsp;</p>
 
 						</article>
 
-						<hr class="double-seperator"/>
+						<!-- <hr class="double-seperator"/> -->
 						<h3 class="more"><a href="/section/news">More News</a></h3>
 						<article class="secondaryNoPhoto">
 
@@ -508,7 +516,12 @@
 
 
 						<article class="secondaryStory">
-							<h5><a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update">Men&#039;s tennis team starts season strong</a></h5>
+
+							<figure style="width: 300px; height: 200px;">
+								<a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update"><img style="width: 300px; height: 200px;" src="http://media.urc.s3.amazonaws.com/5113_zbkkjybpmrgbrwl20150125011654t.jpg" alt="Men&#039;s tennis team starts season strong"></a>
+							</figure> 
+
+							<h5><a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update">Men&#039;s tennis team starts season amazingly strong</a></h5>
 							<aside>
 
 
@@ -517,15 +530,13 @@
 
 							</aside>
 
-							<figure>
-								<a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update"><img src="http://media.urc.s3.amazonaws.com/5113_zbkkjybpmrgbrwl20150125011654t.jpg" alt="Men&#039;s tennis team starts season strong"></a>
-							</figure>
+							
 
 							<p>Just past the midway point in the season, Richmond's men's tennis team is off to its best start in recent years and primed to compete for a conference ...</p>
 
 						</article>
 
-						<hr class="double-seperator"/>
+						<!-- <hr class="double-seperator"/> -->
 						<h3 class="more"><a href="/section/sports">More Sports</a></h3>
 						<article class="secondaryNoPhoto">
 
@@ -555,6 +566,11 @@
 
 
 						<article class="secondaryStory">
+
+							<figure style="width: 300px; height: 200px;">
+								<a href="http://www.thecollegianur.com/article/2015/03/student-raises-money-for-cancer-friends-raise-abroad-money-for-student"><img style="width: 300px; height: 200px;" src="http://media.urc.s3.amazonaws.com/5122_arnoldgofundmet.png" alt="Student raises money for cancer, friends raise abroad money for her"></a>
+							</figure>
+
 							<h5><a href="http://www.thecollegianur.com/article/2015/03/student-raises-money-for-cancer-friends-raise-abroad-money-for-student">Student raises money for cancer, friends raise abroad money for her</a></h5>
 							<aside>
 
@@ -564,15 +580,13 @@
 
 							</aside>
 
-							<figure>
-								<a href="http://www.thecollegianur.com/article/2015/03/student-raises-money-for-cancer-friends-raise-abroad-money-for-student"><img src="http://media.urc.s3.amazonaws.com/5122_arnoldgofundmet.png" alt="Student raises money for cancer, friends raise abroad money for her"></a>
-							</figure>
+							
 
 							<p>Jackie Arnold raised money for cancer patients by running in the&nbsp;Yuengling Shamrock Marathon in honor of her father.&nbsp;</p>
 
 						</article>
 
-						<hr class="double-seperator"/>
+						<!-- <hr class="double-seperator"/> -->
 						<h3 class="more"><a href="/section/features">More Features</a></h3>
 						<article class="secondaryNoPhoto">
 
@@ -598,6 +612,11 @@
 
 
 						<article class="secondaryStory">
+
+							<figure style="width: 300px; height: 200px;">
+								<a href="http://www.thecollegianur.com/article/2015/03/deeper-seeded-issues-at-play-in-the-ferguson-saga"><img style="width: 300px; height: 200px;" src="http://media.urc.s3.amazonaws.com/5112_student_vietnam_war_protesterst.JPG" alt="Deeper seeded issues at play in the Ferguson saga"></a>
+							</figure>
+
 							<h5><a href="http://www.thecollegianur.com/article/2015/03/deeper-seeded-issues-at-play-in-the-ferguson-saga">Deeper seeded issues at play in the Ferguson saga</a></h5>
 							<aside>
 
@@ -607,15 +626,11 @@
 
 							</aside>
 
-							<figure>
-								<a href="http://www.thecollegianur.com/article/2015/03/deeper-seeded-issues-at-play-in-the-ferguson-saga"><img src="http://media.urc.s3.amazonaws.com/5112_student_vietnam_war_protesterst.JPG" alt="Deeper seeded issues at play in the Ferguson saga"></a>
-							</figure>
-
 							<p>Anger towards police in Ferguson is a sign of deeper-seeded issues in society that&nbsp;need to be addressed.</p>
 
 						</article>
 
-						<hr class="double-seperator"/>
+						<!-- <hr class="double-seperator"/> -->
 						<h3 class="more"><a href="/section/opinion">More Opinion</a></h3>
 						<article class="secondaryNoPhoto">
 
@@ -830,7 +845,7 @@
 				</script>
 
 
-				<div class="row-fluid front-page-sectional">
+				<!-- <div class="row-fluid front-page-sectional">
 					<div class="span12">
 						<h4><a href="/blog/">Blogs</a></h4>
 						<a href="/blog/">SEE MORE ></a>
@@ -883,7 +898,7 @@
 
 						</div>
 					</div>
-				</div>
+				</div> -->
 
 
 
@@ -912,7 +927,7 @@
 
 									<li><a href="http://www.thecollegianur.com/article/2015/03/live-blog-town-hall-forum-sexual-misconduct">Live blog: Town hall forum on sexual misconduct policies</a></li>
 
-									<li><a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update">Men&#039;s tennis team starts season strong</a></li>
+									<li><a href="http://www.thecollegianur.com/article/2015/03/tennis-midseason-update">Men&#039;s tennis team starts season amazingly strong</a></li>
 
 									<li><a href="http://www.thecollegianur.com/article/2015/03/rove-app">Richmond freshman launches new app called “Rove”</a></li>
 
@@ -964,14 +979,14 @@
 						<a class="carousel-control right" href="#sidebarCarousel" data-slide="next">&rsaquo;</a>
 					</div>
 					<hr class="seperator"/>
-					<h3>Connect with the Collegian!</h3>
+					<!-- <h3>Connect with the Collegian!</h3>
 					<ul class="social">
 						<li><a href="http://www.facebook.com/urcollegian" target="_blank"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/facebook.png" alt="Facebook"></a></li>
 						<li><a href="http://twitter.com/URCollegian" target="_blank"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/twitter.png" alt="Twitter"></a></li>
 						<li><a href="https://www.youtube.com/user/URCollegian" target="_blank"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/youtube.png" alt="Youtube"></a></li>
 						<li><a href="#"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/rss.png" alt="RSS"></a></li>
 						<li><a href="#"><img src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/mail.png" alt="Emailp"></a></li>
-					</ul>
+					</ul> -->
 
 					<!-- gryphon/ads/rectangle.tpl -->
 
@@ -1244,7 +1259,7 @@
 			<header>
 				<img class="foot-img" src="http://dufhbzqc5kx7o.cloudfront.net/20150225mygmd9ml_/dist/img/URC_logo_finalfooter.png" alt="the collegian">
 			</header>
-			<div class="row-fluid">
+<!-- 			<div class="row-fluid">
 				<div class="span12 text-center">
 					<ul class="unstyled foot-nav">
 						<li><a href="/">Home</a></li>
@@ -1256,7 +1271,7 @@
 						<li><a href="/blog/">Blogs</a></li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 			<div class="row-fluid">
 				<div class="span12 text-center">
 					<ul class="unstyled subnav">
@@ -1271,7 +1286,7 @@
 					</ul>
 				</div>
 			</div>
-			<p>North Court Basement, 40 Westhampton Way, University of Richmond, Va. 23173</p>
+			<p>North Court Basement, 40 Westhampton Way, University of Richmond, VA. 23173</p>
 			<p>Copyright &copy; 2015</p>
 			<p><a href="/page/privacy-policy">Privacy Policy</a></p>
 			<p class="tagline_footer" style="text-align:center;">Powered by <a href="http://getsnworks.com"><img src="http://cdn.thesn.net/gAssets/SNworks_gray.png" alt="powered by SNworks" title="powered by SNworks"></a> Solutions by The State News</p>
